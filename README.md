@@ -1,1 +1,1 @@
-# loyalty-tenant-api
+# Loyalty Tenant API
