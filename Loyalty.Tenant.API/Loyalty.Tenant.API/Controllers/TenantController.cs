@@ -26,17 +26,6 @@ namespace Loyalty.Tenant.API.Controllers
 		#region Get Methods
 
 		[HttpGet]
-		[ProducesResponseType(200, Type = typeof(GetTenantsResponse))]
-		[ProducesResponseType(400, Type = typeof(ValidationErrorResponse))]
-		[ProducesResponseType(401, Type = typeof(ErrorResponse))]
-		[ProducesResponseType(403, Type = typeof(ErrorResponse))]
-		[ProducesResponseType(404, Type = typeof(ErrorResponse))]
-		public IActionResult GetTenants([FromQuery] GetTenantsRequest getTenantsRequest)
-		{
-			return Ok(new GetTenantsResponse());
-		}
-
-		[HttpGet]
 		[Route("{id}")]
 		[ProducesResponseType(200, Type = typeof(GetTenantByIdResponse))]
 		[ProducesResponseType(401, Type = typeof(ErrorResponse))]
@@ -50,6 +39,18 @@ namespace Loyalty.Tenant.API.Controllers
 		#endregion
 
 		#region Post Methods
+
+		[HttpPost]
+		[Route("search")]
+		[ProducesResponseType(200, Type = typeof(GetTenantsResponse))]
+		[ProducesResponseType(400, Type = typeof(ValidationErrorResponse))]
+		[ProducesResponseType(401, Type = typeof(ErrorResponse))]
+		[ProducesResponseType(403, Type = typeof(ErrorResponse))]
+		[ProducesResponseType(404, Type = typeof(ErrorResponse))]
+		public IActionResult GetTenants([FromQuery] GetTenantsRequest getTenantsRequest)
+		{
+			return Ok(new GetTenantsResponse());
+		}
 
 		[HttpPost]
 		[ProducesResponseType(200, Type = typeof(CreateTenantResponse))]
@@ -67,6 +68,7 @@ namespace Loyalty.Tenant.API.Controllers
 		#region Put Methods
 
 		[HttpPut]
+		[Route("{id}")]
 		[ProducesResponseType(204)]
 		[ProducesResponseType(400, Type = typeof(ValidationErrorResponse))]
 		[ProducesResponseType(401, Type = typeof(ErrorResponse))]
