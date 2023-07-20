@@ -9,7 +9,7 @@ stages:
     pool:
       vmImage: 'Ubuntu-22.04'
     environment:
-      name: Development
+      name: bluevm
       resourceType: VirtualMachine
       tags: Blue
     strategy:
