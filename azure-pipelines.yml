@@ -11,7 +11,7 @@ stages:
     environment:
       name: Development
       resourceType: VirtualMachine
-      tags: dev
+      tags: Blue
     strategy:
       runOnce:
         deploy:
